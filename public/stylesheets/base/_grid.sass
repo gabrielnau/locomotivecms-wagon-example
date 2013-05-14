@@ -1,0 +1,14 @@
+@import "susy"
+
+$container-style: fluid
+$total-columns:   12
+$column-width:    (56px/$base-font-size)* 1em
+$gutter-width:    (16px/$base-font-size)* 1em
+$grid-padding:    (24px/$base-font-size)* 1em
+
+// http://caniuse.com/#search=border-box
+// http://paulirish.com/2012/box-sizing-border-box-ftw/
+// Can be used on * selector
+// For IE, there is a shiv, use Modernzer to load it
+// https://github.com/Schepp/box-sizing-polyfill
++border-box-sizing

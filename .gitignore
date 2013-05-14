@@ -1,0 +1,4 @@
+/config/deploy.yml
+.DS_Store
+.sass-cache/
+log/
