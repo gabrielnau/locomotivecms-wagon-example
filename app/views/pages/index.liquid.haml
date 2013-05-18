@@ -1,5 +1,5 @@
 ---
-title: I'm a cliché
+title: I'm a cliché - Home
 published: true
 ---
 / paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
@@ -20,8 +20,8 @@ published: true
     %title {{ page.title }}
     
     {{ 'screen.css'| stylesheet_tag: 'screen' }} 
-    {{ 'vendor/zetpo'| javascript_tag }} 
-    {{ 'nav'| javascript_tag }} 
+    {{ 'vendor/zepto.1.0.min'| javascript_tag }} 
+    {{ 'toggle'| javascript_tag }} 
 
     %script
       :plain
@@ -38,30 +38,66 @@ published: true
     // Development only
     #grid-debug Toggle grid
 
+    // Nav
     %header.site-head
       %a.site-head__logo{ href: "/" } I'm a cliché
-      %a.site-head__toggle{ href: "#" } MENU
+      %a.site-head__toggle{ href: "#", class: "js-toggle", "data-target" => ".site-head__nav", "data-parent" => ".site-head" }
+        MENU
+
       %nav.site-head__nav
         %ul
           %li
-            %a{ :href => "/" } HOME
+            %a{ href: "/" } HOME
           %li
-            %a{ :href => "/about" } ABOUT
+            %a{ href: "/about" } ABOUT
           %li
-            %a{ :href => "/news" } NEWS
+            %a{ href: "/news" } NEWS
           %li
-            %a{ :href => "/artists" } ARTISTS
+            %a{ href: "/artists" } ARTISTS
           %li
-            %a{ :href => "/releases" } RELEASES
+            %a{ href: "/releases" } RELEASES
           %li
-            %a{ :href => "/contact" } CONTACT
+            %a{ href: "/contact" } CONTACT
 
     {% block 'content' %}
     
+    // Last five releases
+    %section.section.l-container
+      %header.section-header Latest releases
+      
+      {% for release in contents.releases %}
+      %section.release-preview
+        %a{ href: "", class: "release-preview_artwork" }
+          %img{ src: "{{ release.artwork.url }}" }
+        %header.release-preview__header
+          %span {{ release.title }}
+          %span Tour de chile ep
+        .release-preview__meta
+          %span CLICHÉ {{ release.number }}
+          %time{ datetime: "2012-02-08" } 2012/02/08
+          %ul.release-preview__meta__links
+            %li
+              %a{ href: "#", class: "js-toggle", "data-target" => ".release-preview__player", "data-parent" => ".release-preview" }
+                Player
+            {% if release.shop_url %}
+            %li
+              %a{ href: "{{ release.shop_url }}" } Shop
+            {% endif %}
+            %li
+              %a{ href: "" } 
+                Release page
+        .release-preview__player
+          {% include 'player' with type: 'soundcloud', url: 'http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F34934223&amp;auto_play=false&amp;show_artwork=false&amp;color=ff7700' %}
+      {% endfor %}
+      
+        
+       
+       
+
+
 
     {% endblock %}
     
-    %footer
-      © {{ today | localized_date: '%Y' }} - I'm A Cliché
+    %footer.site-footer © {{ today | localized_date: '%Y' }} - I'm A Cliché
   
   

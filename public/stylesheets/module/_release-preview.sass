@@ -1,0 +1,28 @@
+.release-preview
+  +span-columns($total-columns, $total-columns)
+  background-color: $light
+  color: $dark
+  //padding: $space-unit 0 $space-unit $space-unit
+
+.release-preview__header
+  +span-columns(8 omega, $total-columns)
+  +adjust-font-size-to(16px, 2)
+
+.release-preview__meta
+  +span-columns(8 omega, $total-columns)
+  span, time
+    display: block
+    +adjust-font-size-to(14px)
+  
+.release-preview__meta__links
+  li
+    display: inline-block
+    margin-right: $space-unit
+
+.release-preview_artwork
+  +span-columns(4, $total-columns)
+
+.release-preview__player
+  display: none
+  +span-columns($total-columns, $total-columns)
+  +margin-leader(1)

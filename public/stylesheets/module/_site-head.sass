@@ -1,8 +1,23 @@
 .site-head
+  // ... 
+  +margin-trailer(1)
+
+.site-head__nav
+  display: none  
   
-  nav
-    display: none
+  a
+    display: block
+    padding-left: $gutter-width
+    background-color: $light
+    +adjust-font-size-to(16px, 1.5)
+    color: $dark
+
+    &:hover
+      color: $light
+      background-color: $dark
 
 .site-head__logo
 
 .site-head__toggle
+  position: absolute
+  right: $gutter-width

@@ -19,6 +19,6 @@ group :misc do
   gem 'susy', require: 'susy'
   gem 'sass-globbing'
   gem 'compass'
-  
+  gem 'pry'
   # gem 'redcarpet', require: 'redcarpet'
 end
