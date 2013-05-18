@@ -1,0 +1,7 @@
+%section.latest-posts.l-container
+  %header {{ 'latest_posts' | translate }}
+  %ul
+    {% for post in contents.posts limit: 5 %}
+    %li
+      %a{ href: "/posts/{{ post._slug }}" } {{ post.title }}
+    {% endfor %}

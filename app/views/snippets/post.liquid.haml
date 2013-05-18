@@ -1,0 +1,11 @@
+// Locals : 
+// - post
+
+%article.post
+  %header {{ post.title }}
+  %a{ :href => "/posts/{{ post._slug }}" }
+    %img.post__cover{ :src => "http://placehold.it/100x100" }
+  .post__content
+    %time{ datetime: "{{ post.updated_at }}" } {{ post.updated_at }}
+    {{ post.text }}
+    

@@ -1,0 +1,33 @@
+---
+title: About
+listed: true
+published: true
+position: 1
+# TODO: explain it
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+
+{% extends parent %}
+
+{% block content %}
+
+// Last five releases
+%section.section.l-container
+  %header.section-header About
+
+  %img{ class: "about__image", src: "{% editable_file 'about-image-1', hint: 'About image top left', priority: 1 %} http://placehold.it/300x100 {% endeditable_file %}" }
+  %img{ class: "about__image", src: "{% editable_file 'about-image-2', hint: 'About image top right', priority: 1 %} http://placehold.it/300x100 {% endeditable_file %}" }
+  %img{ class: "about__image", src: "{% editable_file 'about-image-3', hint: 'About image bottom left', priority: 1 %} http://placehold.it/300x100 {% endeditable_file %}" }
+  %img{ class: "about__image", src: "{% editable_file 'about-image-4', hint: 'About image bottom right', priority: 1 %} http://placehold.it/300x100 {% endeditable_file %}" }
+  
+  .about__text
+    {% editable_long_text "about-text", hint: "About text", priority: 1 %}
+    %p French DJ and producer Cosmo Vitelli created I’m a Cliché  in 2004.
+    %p Beside the ability to release his own production (and later, his band Bot’Ox’s music) without depending on anybody else, the aim was to discover and release the production of artists he liked. An aesthetics of the margin took shape.
+    %p I’m a Cliché has been a balanced mix of club hits and home songs, reverence to the past and experimentation, obstinacy and volatilty.
+    %p With a pattern of soon-to-be-big musicians : Yuksek, Simian Mobile Disco, Azari & III, Runaway were all memorable signatures of the label.
+    {% endeditable_long_text %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+---
+title: Release
+listed: true
+published: true
+# position: 1
+content_type: "releases"
+
+# TODO: explain it
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends index %}
+
+{% block content %}
+
+%section.section.l-container
+  %header.section-header {{ release.artist.name }} - {{ release.title }}
+
+
+  %a.go-back{ href: "/releases" } {{ 'go-back' | translate }}
+
+{% endblock %}

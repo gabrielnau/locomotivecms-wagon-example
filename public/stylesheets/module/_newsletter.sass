@@ -1,0 +1,15 @@
+$input-width: 80%
+$input-margin: 5%
+$submit-width: 100% - $input-width - $input-margin
+
+.newsletter__email
+  +adjust-font-size-to($normal)
+  float: left
+  width: $input-width
+  padding-left: $space-unit
+
+.newsletter__submit
+  +adjust-font-size-to($normal)
+  float: left
+  width: $submit-width
+  margin-left: $input-margin

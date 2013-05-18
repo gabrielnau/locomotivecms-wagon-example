@@ -1,0 +1,41 @@
+# Public name of this content type
+name: artists
+slug: artists
+description: I'm a cliche artists
+label_field_name: name
+order_by: name
+order_direction: asc # default: asc, also available: desc
+# Describe each field. The name shoud always be an underscored string
+fields: 
+- name:
+    label: Name
+    type: string
+    required: true
+    hint: Name of the artist
+    localized: false
+
+- biography:
+    label: Biography
+    type: text
+    required: true
+    hint: Biography of the artist
+    localized: false
+    # Enable or not the RTE [html|text]
+    text_formatting: html
+
+- releases:
+    label: Related releases
+    type: has_many
+    hint: Relases of the artst
+    localized: false
+    class_name: releases
+    inverse_of: artist
+
+- links:
+    label: Related links
+    type: has_many
+    hint: 
+    localized: false
+    class_name: links
+    inverse_of: artist
+

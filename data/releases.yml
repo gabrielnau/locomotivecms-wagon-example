@@ -1,0 +1,27 @@
+- "Sample 1":
+    vinyl_release: 2013/49/18 # YYYY/MM/DD
+    digital_release: 2013/49/18 # YYYY/MM/DD
+    description: "Dicta assumenda inventore quis incidunt. Delectus earum excepturi a amet. Quam officia quisquam eum voluptatem. Non et magni sit. Corporis et doloremque dolorem praesentium voluptas corrupti quos aspernatur."
+    shop_url: "Voluptas explicabo voluptatem non."
+    artist: Sample 1
+
+- "Sample 2":
+    vinyl_release: 2013/49/18 # YYYY/MM/DD
+    digital_release: 2013/49/18 # YYYY/MM/DD
+    description: "Vitae eligendi voluptas non sapiente quos natus totam. Natus ut tenetur nihil. Aspernatur officia quo consequatur illo eum. Iusto dolores soluta commodi ut nemo veniam."
+    shop_url: "Eos eum hic praesentium esse."
+    artist: Sample 2
+
+- "Sample 3":
+    vinyl_release: 2013/49/18 # YYYY/MM/DD
+    digital_release: 2013/49/18 # YYYY/MM/DD
+    description: "Nostrum sed tenetur commodi. Molestiae dolorem vel eum. Neque repellendus quia fuga non et distinctio. Et voluptatem tempore non quibusdam ipsa vero."
+    shop_url: "Illo nesciunt repellat consequatur sit voluptates nisi in."
+    artist: Sample 3
+
+- "Sample 4":
+    vinyl_release: 2013/49/18 # YYYY/MM/DD
+    digital_release: 2013/49/18 # YYYY/MM/DD
+    description: "Modi et natus excepturi sed expedita. Sunt voluptates quisquam quo neque nemo et ut est. Excepturi cupiditate vel officia iste quisquam iure dolore. Qui sed sequi quia veritatis alias."
+    shop_url: "Distinctio eos ipsa est commodi."
+    artist: Sample 4

@@ -1,0 +1,25 @@
+---
+title: Releases
+listed: true
+published: true
+---
+
+{% extends parent %}
+
+{% block content %}
+
+// Last news
+%section.section.l-container
+  %header.section-header Releases
+
+  {% for release in contents.releases %}
+  %section.releases-list-item
+    %header.releases-list-item__title
+      %a{ href: "/releases/{{ release._slug }}" } ARTISTE - {{ release.title }}
+    %a{ href: "/releases/{{ release._slug }}", class: "releases-list-item__artwork" }
+      %img{ src: "http://placehold.it/100x100" }
+    .releases-list-item__meta
+
+  {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+// Locals : 
+// - release
+
+%section.release-preview
+  %a{ href: "/releases/{{ release._slug }}", class: "release-preview_artwork" }
+    %img{ src: "" }
+  %header.release-preview__header
+    %span {{ release.artist.name }}
+    %span {{ release.title }}
+  .release-preview__meta
+    %span {{ 'cliche' | translate }} {{ release.number }}
+    %time{ datetime: "2012-02-08" } 2012/02/08
+    %ul.release-preview__meta__links
+      %li
+        %a{ href: "#", class: "js-toggle", "data-target" => ".release-preview__player", "data-parent" => ".release-preview" }
+          Player
+      {% if release.shop_url %}
+      %li
+        %a{ href: "{{ release.shop_url }}" } Shop
+      {% endif %}
+      %li
+        %a{ href: "/releases/{{ release._slug }}" } 
+          Release page
+  .release-preview__player
+    {% include 'player' with type: 'soundcloud', url: 'http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F34934223&amp;auto_play=false&amp;show_artwork=false&amp;color=ff7700' %}

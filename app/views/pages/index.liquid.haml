@@ -1,5 +1,5 @@
 ---
-title: I'm a cliché - Home
+title: I'm a Cliché - Home
 published: true
 ---
 / paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
@@ -41,9 +41,7 @@ published: true
     // Nav
     %header.site-head
       %a.site-head__logo{ href: "/" } I'm a cliché
-      %a.site-head__toggle{ href: "#", class: "js-toggle", "data-target" => ".site-head__nav", "data-parent" => ".site-head" }
-        MENU
-
+      %a.site-head__toggle{ href: "#", class: "js-toggle", "data-target" => ".site-head__nav", "data-parent" => ".site-head" } MENU
       %nav.site-head__nav
         %ul
           %li
@@ -63,41 +61,79 @@ published: true
     
     // Last five releases
     %section.section.l-container
-      %header.section-header Latest releases
-      
+      %header.section-header {{ 'latest_releases' | translate }}
       {% for release in contents.releases %}
-      %section.release-preview
-        %a{ href: "", class: "release-preview_artwork" }
-          %img{ src: "{{ release.artwork.url }}" }
-        %header.release-preview__header
-          %span {{ release.title }}
-          %span Tour de chile ep
-        .release-preview__meta
-          %span CLICHÉ {{ release.number }}
-          %time{ datetime: "2012-02-08" } 2012/02/08
-          %ul.release-preview__meta__links
-            %li
-              %a{ href: "#", class: "js-toggle", "data-target" => ".release-preview__player", "data-parent" => ".release-preview" }
-                Player
-            {% if release.shop_url %}
-            %li
-              %a{ href: "{{ release.shop_url }}" } Shop
-            {% endif %}
-            %li
-              %a{ href: "" } 
-                Release page
-        .release-preview__player
-          {% include 'player' with type: 'soundcloud', url: 'http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F34934223&amp;auto_play=false&amp;show_artwork=false&amp;color=ff7700' %}
+      {% include release-preview-home with release %}
+      {% endfor %}
+
+    // Last news
+    %section.section.l-container
+      %header.section-header {{ 'news' | translate }}
+      {% for post in contents.posts %}
+      {% include post-preview with post %}
       {% endfor %}
       
+    // Next events / releases
+    %section.section.l-container
+      %header.section-header {{ 'next' | translate }}
+      %ul
+        {% for event in contents.events %}
+        %li
+          {% if event.link %}
+          %a{ href: "{{ event.link }}" }
+            %time{ datetime: "{{ event.date }}" } {{ event.date }} :
+            {{ event.title }}
+          {% else %}
+          %time{ datetime: "{{ event.date }}" } {{ event.date }} :
+          {{ event.title }}
+          {% endif %}
+        {% endfor %}
         
-       
-       
+    // Newsletter form
+    %section.section.l-container
+      %header.section-header {{ 'newsletter' | translate }}
 
+      %form.newsletter
+        %input{ name: "email", class: "newsletter__email", placeholder: "your email" }
+        %input{ type: "submit", class: "newsletter__submit", value: "OK"  }
+    
+    // Edit service
+    %section.section.l-container
+      %header.section-header {{ 'edit-service' | translate }}
+  
+      %a{ href: "http://edit-service.com", class: "edit-service__image" }
+        %img{ src: "{% editable_file 'edit-service-image', hint: 'Edit service image', priority: 1 %} http://placehold.it/300x100 {% endeditable_file %}" }
+      .edit-service__description
+        {% editable_long_text "edit-service-text", hint: "Edit service text", priority: 1 %}
+        %p 
+          Every two weeks, 
+          %a{ href: "http://edit-service.com" } I'm a Cliche Edit Service 
+          gives away an unreleased edit produced by members of the crew or beloved friends.
+        {% endeditable_long_text %}
+
+    // Links
+    %section.section.l-container
+      %header.section-header {{ 'social-links' | translate }}
+      %ul
+        %li
+          %a{ href: "http://www.facebook.com/pages/IM-A-CLICHE/138670535421", class: "icon--facebook" }
+            Facebook
+        %li
+          %a{ href: "https://twitter.com/#!/ImAClicheLabel", class: "icon--twitter" }
+            Twitter
+        %li
+          %a{ href: "http://www.youtube.com/imaclichelabel", class: "icon--youtube" }
+            Youtube
+        %li
+          %a{ href: "https://soundcloud.com/imacliche/", class: "icon--soundcloud" }
+            Soundcloud
+        %li
+          %a{ href: "http://official.fm/imacliche", class: "icon--officialfm" }
+            Official FM
 
 
     {% endblock %}
     
-    %footer.site-footer © {{ today | localized_date: '%Y' }} - I'm A Cliché
+    %footer.site-footer © {{ today | localized_date: '%Y' }} - {{ 'im-a-cliche' | translate }}
   
   

@@ -1,0 +1,31 @@
+name: Links
+slug: links
+description: A description of the content type for the editors
+label_field_name: text
+order_by: manually
+
+# Describe each field. The name shoud always be an underscored string
+fields: 
+- text:
+    label: Text
+    type: string
+    required: true
+    hint: A description of the field for the editors
+    localized: false
+
+- url:
+    label: Url
+    type: string
+    required: false
+    hint: A description of the field for the editors
+    localized: false
+
+- artist:
+    label: Artist related to the link
+    type: belongs_to
+    class_name: artists
+    required: false
+    hint: A description of the field for the editors
+    localized: false
+
+

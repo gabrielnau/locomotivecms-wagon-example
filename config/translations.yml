@@ -6,3 +6,26 @@
 # hello_world:
 #   en: Hello world !
 #   fr: Bonjour le monde !
+
+im-a-cliche:
+    en: I'm A Cliché
+cliche:
+    en: CLICHÉ
+
+latest_releases:
+    en: Latest releases
+news:
+    en: News
+next:
+    en: Next
+newsletter:
+    en: Newsletter
+edit-service:
+    en: Edit Service
+social-links:
+    en: Links
+latest_posts:
+    en: Latest news
+
+go-back:
+    en: ← Back

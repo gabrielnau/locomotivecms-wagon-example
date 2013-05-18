@@ -1,0 +1,29 @@
+---
+title: Artists
+content_type: "artists"
+---
+{% extends index %}
+
+{% block content %}
+
+
+%section.section.l-container
+  %header.section-header {{ artist.name }}
+
+  Releases : 
+  %ul
+    {% for release in artist.releases %}
+    %li
+      %a{ href: "/releases/{{ release._slug }}" } {{ release.title }}
+    {% endfor %}
+
+  Liens : 
+  %ul
+    {% for link in artist.links %}
+    %li
+      %a{ href: "/links/{{ link._slug }}" } {{ link.text }}
+    {% endfor %}  
+
+  %a.go-back{ href: "/artists" } {{ 'go-back' | translate }}
+
+{% endblock %}

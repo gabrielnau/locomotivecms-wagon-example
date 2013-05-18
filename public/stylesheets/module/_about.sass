@@ -1,0 +1,10 @@
+// No parent module needed
+
+.about__image
+  +span-columns($total-columns/4, $total-columns)
+  &:last-child
+    display: none
+
+.about__text
+  +span-columns($total-columns omega, $total-columns)
+  +margin-leader(1)

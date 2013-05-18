@@ -1,0 +1,22 @@
+---
+title: News
+listed: true
+published: true
+# position: 1
+content_type: "posts"
+
+# TODO: explain it
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends index %}
+
+{% block content %}
+
+{% include post with post %}
+{% include latest-posts %}
+
+%a.go-back{ href: "/news" } {{ 'go-back' | translate }}
+
+{% endblock %}

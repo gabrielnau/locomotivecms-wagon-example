@@ -1,0 +1,17 @@
+.post
+  header
+    +span-columns(8 omega, $total-columns)
+    +adjust-font-size-to($normal, 2)
+  
+.post__thumbnail
+  +span-columns(4, $total-columns)
+.post__content
+  +span-columns(8 omega, $total-columns)
+  time
+    display: block
+    +adjust-font-size-to($small)
+
+.post__readmore
+  display: block
+  +adjust-font-size-to(14px, 1)
+  

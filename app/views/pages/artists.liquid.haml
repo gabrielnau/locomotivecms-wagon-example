@@ -1,0 +1,29 @@
+---
+title: Artists
+listed: true
+published: true
+---
+
+{% extends parent %}
+
+{% block content %}
+
+// Last news
+%section.section.l-container
+  %header.section-header Artists
+
+  {% for artist in contents.artists %}
+  %section.artists-list-item
+    %a{ href: "/artists/{{ artist._slug }}", class: "artists-list-item__photo" }
+      %img{ src: "http://placehold.it/100x100" }
+    %header.artists-list-item__meta
+      %a{ href: "/artists/{{ artist._slug }}" } 
+        ARTISTE - {{ artist.name }}
+        %span.artists-list-item__meta__link
+
+    
+    
+
+  {% endfor %}
+
+{% endblock %}

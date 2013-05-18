@@ -1,0 +1,27 @@
+---
+title: News
+listed: true
+published: true
+---
+
+{% extends parent %}
+
+{% block content %}
+
+// Last news
+%section.section.l-container
+  %header.section-header News
+
+  {% paginate contents.posts by 2 %}
+
+  {% for post in paginate.collection %}
+  {% include post-preview with post %}
+  {% endfor %}
+
+  {{ paginate | default_pagination, next: 'Next', previous: 'Previous' }}
+
+  {% endpaginate %}
+
+{% include latest-posts %}
+
+{% endblock %}
